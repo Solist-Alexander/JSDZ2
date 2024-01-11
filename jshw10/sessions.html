@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let sessionsStorage = JSON.parse(localStorage.getItem('sessions')) || []
+    let div = document.createElement('div')
+    div.style.display = 'flex'
+    for (const sessionElement of sessionsStorage) {
+        let divSessionElement = document.createElement('div')
+        divSessionElement.style.height = '80px'
+        divSessionElement.style.width = '120px'
+        divSessionElement.style.border = '2px solid grey'
+        divSessionElement.style.marginLeft = '20px'
+        let p = document.createElement('p')
+        p.innerText = `${sessionElement.user}`
+
+
+        divSessionElement.append(p)
+        div.append(divSessionElement)
+    }
+    document.body.append(div)
+
+</script>
+</body>
+</html>

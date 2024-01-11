@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let url = new URL(location.href)
+    let userId = url.searchParams.get('id')
+
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+        .then(value => value.json())
+        .then(userInfo =>{
+            console.log(userInfo)
+
+            function iterator(userInfo){
+                for (const userInfoKey in userInfo) {
+                    if(typeof userInfo[userInfoKey] === 'object'){
+                        iterator(userInfo[userInfoKey])
+                    }
+                    if(typeof userInfo[userInfoKey] !== 'object')
+                    console.log(userInfoKey + ' - ' + userInfo[userInfoKey])
+                }
+            }
+
+            iterator(userInfo)
+        })
+
+
+</script>
+</body>
+</html>

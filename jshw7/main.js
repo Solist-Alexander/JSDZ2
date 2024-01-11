@@ -25,6 +25,27 @@
 // }
 // }
 //
+
+function CreateUser(id, name, username, email, street, city, zipcode, lat, lng, phone, website, nameCompany,
+                    catchPhrase, bs) {
+    let address = {street, city, zipcode, geo: {lat, lng}}
+    let company = {name: nameCompany, catchPhrase, bs}
+    return {id, name, username, email, address, phone, website, company}
+}
+
+let user1 = CreateUser(1, 'Leanne Graham', 'Bret', 'Sincere@april.biz', 'Kulas Light', 'Gwenborough', '92998-3874',
+    '-37.3159', '81.1496', '1-770-736-8031 x56442', 'website', 'Romaguera-Crona',
+    'Multi-layered client-server neural-net', 'harness real-time e-markets')
+console.log(user1)
+
+
+function CreateUser2(id, name, username, email, address = {street, city}) {
+    return {id, name, username, email, address}
+}
+
+let user2 = CreateUser2(1, 'Leanne Graham', 'Bret', 'Sincere@april.biz', 'Kulas Light', 'Gwenborough')
+console.log(user2)
+
 //
 // -  Створити функцію конструктор / клас  який описує об'єкт тегу
 // Поля :
