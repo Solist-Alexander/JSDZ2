@@ -3,6 +3,9 @@
 *:after {
     box-sizing: border-box;
 }
+body{
+    background: aliceblue;
+}
 
 .div_users {
     display: grid;
@@ -19,6 +22,7 @@
     width: 260px;
     border: 2px solid grey;
     position: relative;
+
 }
 
 .button_user {
@@ -35,7 +39,14 @@
     right: 80px;
     height: 50px;
     width: 100px;
+    transition: background 0.5s ease;
+
 }
+.button_user:hover{
+    background: blanchedalmond;
+    transition: background 0.5s ease;
+}
+
 .div_details{
     border: 2px solid grey;
 }
@@ -79,7 +90,7 @@
     top: 75px;
     border: 2px solid grey;
     background: beige;
-    right: 50px;
+    right: 60px;
     height: 50px;
     width: 100px;
 }
